@@ -1,6 +1,6 @@
 <h1>
-    <div style="font-size:48px; font-weight:bold; color:white;">WriteMyEssay </div>
-    <div style="font-size:16px; color:white;"> Scholarships and college applications essays simplified. </div> 
+    <%= image_tag(asset_path("write my essay.png"), :style => "height:200px; margin-top:20px;") %>
+    <div style="font-size:16px; color:white; "> Scholarships and college applications essays simplified. </div> 
 </h1>
     <div>
         <p data-bind="text: question, css: {panel:!printparagraph() }"></p>
@@ -34,21 +34,31 @@
 
     <div>
         <div style="clear:both;"></div>
-         <p id="exampleparagraph" data-bind="visible: printparagraph" class="panel" style="float:left; width:45%;">
-            Example: I founded a public speaking after-school program for middle schoolers in East St. Louis, MO. 
+        <div style="float:left; width:45%;">
+        <div>
+            Example
+        </div>
+         <p id="exampleparagraph" data-bind="visible: printparagraph" class="panel" style="  color:#73a8e2">
+             I founded a public speaking after-school program for middle schoolers in East St. Louis, MO. 
             I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipine skills, which are valuable leadership skills. 
             I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career. 
             This experience showed that I am compassionate for the next generation. 
         </p>
-    <textarea id="intro" data-bind="value: results, visible: printparagraph" style="color:white; float:right; width:45%;" class="panel">
+        </div>
+        <div style="float:right; width:45%;">
+         <div>
+            Your Introduction Paragraph!
+        </div>
+    <textarea id="intro" data-bind="value: results, visible: printparagraph" style="color:white;" class="panel">
+    </textarea>
             <div style="clear:both;"></div>
+        </div>
     </div>
 
-    </textarea>
 
    
 
-    <div class="panel">
+    <div class="panel" data-bind=" visible:!printparagraph()">
         Example
-        <p data-bind="text: example, visible:!printparagraph()" ></p>
+        <p data-bind="text: example" ></p>
     </div>
