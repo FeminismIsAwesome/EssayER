@@ -1,33 +1,39 @@
-<h1>PERSONAL SCHOLARSHIP ESSAY <br> INTRODUCTION PARAGRAPH <br> TEMPLATE</h1>    
-
+<h1>
+    <div style="font-size:48px; font-weight:bold; color:black;">WriteMyEssay </div>
+    <div style="font-size:16px; color: rgb(111, 111, 111);"> Scholarships and college applications essays simplified. </div> 
+</h1>
     <div>
-        <p data-bind="text: question"></p>
+        <p data-bind="text: question, css: {panel:!printparagraph() }"></p>
     </div>
     
-     <div id = "divintroparagraph">
+     <div id = "divintroparagraph" >
          
-            <textarea id="sentencebox" type="text" data-bind="value: sentence,         visible: ! printparagraph ()">
+            <textarea id="sentencebox" type="text" data-bind="value: sentence, visible: ! printparagraph (), css: {panel:printparagraph }">
             </textarea>
          
-         <button data-bind="click: connect">
+         <button data-bind="click: connect, visible: !printparagraph()">
              NEXT!
          </button>
        
       
     </div>
+
+    <div data-bind="visible: printparagraph">
+      Introduction Paragraph
+    </div>
     
-    <textarea id="intro" data-bind="value: results, visible: printparagraph">
+    <textarea id="intro" data-bind="value: results, visible: printparagraph" class="panel">
     </textarea>
 
     <div id="divexampleparagraph">
-        <p id="exampleparagraph" data-bind="visible: printparagraph">
-            Example: I founded a public speaking after-school program for middle schoolers in East St. Louis, MO. <br> 
-            I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipine skills, which are valuable leadership skills. <br> 
-            I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career. <br>
+        <p id="exampleparagraph" data-bind="visible: printparagraph" class="panel">
+            Example: I founded a public speaking after-school program for middle schoolers in East St. Louis, MO. 
+            I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipine skills, which are valuable leadership skills. 
+            I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career. 
             This experience showed that I am compassionate for the next generation. 
         </p>
     </div>
 
     <div>
-        <p data-bind="text: example"></p>
+        <p data-bind="text: example, visible:!printparagraph()" class="panel"></p>
     </div>

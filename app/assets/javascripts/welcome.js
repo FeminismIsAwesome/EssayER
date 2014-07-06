@@ -12,19 +12,36 @@ ko.bindingHandlers.enter = {
     } 
 };
 var myapp = function ()
-{ this.question = ko.observable ("Write one sentence about a volunteer experience.");
+{ 
+var exampleprompts = [
+"I founded a public speaking after-school program for middle schoolers in East St.Louis, MO.",
+"I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipline skills, which are valuable leadership skills.",
+"By mentoring the next generation, I effectively combated education inequality.", 
+"I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career.",
+"Starting a new organization or business, holding a position like President, Vice President, Treasurer, and/or Secretary in a club, being strong during a tough time, like a family member’s death."
+]
+
+var tips = []
+
+var prompts = [
+"Write one sentence summarizing a time when you did something cool. Like a volunteer experience, sailing a boat, starting a business, going on a service trip, joining a club, or writing a story. Just one, it’s easy!", 
+"How did you show leadership skills during this experience?",
+"How did this experience demonstrate a commitment to community service?", 
+"How could this experience relate to your career?"] 
+var nextParagraphPrompt = [
+"What are 3 leadership experiences you’ve had?"
+]
+var nextExamplesParagraph = [
+]
+this.question = ko.observable (prompts[0]);
  
-this.example = ko.observable ("Example: I founded a public speaking after-school program for middle schoolers in East St. Louis, MO.")
+this.example = ko.observable (exampleprompts[0])
 
-var exampleprompts = ["Example: For 8 months, I taught a public speaking after-school program to middle schoolers in East St. Louis, MO.", "I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipine skills, which are valuable leadership skills.", "I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career.", "This experience showed that I am compassionate for the next generation."]
-
-
-var prompts = ["Write one sentence summarizing a volunteer experience. Just one. (I know it's hard)", "How did you show leadership skills during this volunteer experience?", "How could this relate to your career?", "How did this volunteer experience show a positive character quality?"] 
 this.count = ko.observable (0);  
  
  this.sentence = ko.observable ();   
  this.results = ko.observable ("");  
- this.printparagraph = ko.computed (function () {return this.count () == prompts.length}, this);
+ this.printparagraph = ko.computed (function () {return this.count () >= prompts.length}, this);
  this.connect = function ()
  
  {
