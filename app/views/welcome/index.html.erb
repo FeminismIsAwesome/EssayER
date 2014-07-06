@@ -10,11 +10,19 @@
     </div>
      <div id = "divintroparagraph" class="panel" >
          
-         <div>
+    
+
+    <div data-bind="visible: printparagraph">
+      Introduction Paragraph
+    </div>
+                 <div>
                      <textarea id="sentencebox" type="text" data-bind="value: sentence, visible: ! printparagraph (), css: {panel:printparagraph }">
             </textarea>
-         
+          <div id="divexampleparagraph">
+       
+    </div>
          </div>
+
          <div>
 
          <button data-bind="click: connect, visible: !printparagraph()" class="button">
@@ -24,21 +32,21 @@
       
     </div>
 
-    <div data-bind="visible: printparagraph">
-      Introduction Paragraph
-    </div>
-    
-    <textarea id="intro" data-bind="value: results, visible: printparagraph" class="panel">
-    </textarea>
-
-    <div id="divexampleparagraph">
-        <p id="exampleparagraph" data-bind="visible: printparagraph" class="panel">
+    <div>
+        <div style="clear:both;"></div>
+         <p id="exampleparagraph" data-bind="visible: printparagraph" class="panel" style="float:left; width:45%;">
             Example: I founded a public speaking after-school program for middle schoolers in East St. Louis, MO. 
             I had to demonstrate strong oratorical abilities to lead by example. In addition, maintaining a respectful, productive classroom required social intelligence and constructive discipine skills, which are valuable leadership skills. 
             I plan to become a lawyer. The ability to mentor others and deliver a clear, persuasive message will help me achieve this career. 
             This experience showed that I am compassionate for the next generation. 
         </p>
+    <textarea id="intro" data-bind="value: results, visible: printparagraph" style="color:white; float:right; width:45%;" class="panel">
+            <div style="clear:both;"></div>
     </div>
+
+    </textarea>
+
+   
 
     <div class="panel">
         Example
