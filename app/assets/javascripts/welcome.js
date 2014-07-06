@@ -50,6 +50,10 @@ this.count = ko.observable (0);
      this.count ( this.count () + 1);
      this.question (prompts [this.count ()])
      this.example (exampleprompts [this.count ()])
+     if(this.printparagraph())
+     {
+        this.results(this.results() + " I have demonstrated leadership skills, committed to community service, and prepared for my career in various ways.")
+     }
      
  }
  var introparagraph = ""

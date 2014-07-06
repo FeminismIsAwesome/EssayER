@@ -1,20 +1,26 @@
 <h1>
-    <div style="font-size:48px; font-weight:bold; color:black;">WriteMyEssay </div>
-    <div style="font-size:16px; color: rgb(111, 111, 111);"> Scholarships and college applications essays simplified. </div> 
+    <div style="font-size:48px; font-weight:bold; color:white;">WriteMyEssay </div>
+    <div style="font-size:16px; color:white;"> Scholarships and college applications essays simplified. </div> 
 </h1>
     <div>
         <p data-bind="text: question, css: {panel:!printparagraph() }"></p>
     </div>
     
-     <div id = "divintroparagraph" >
+    <div>
+    </div>
+     <div id = "divintroparagraph" class="panel" >
          
-            <textarea id="sentencebox" type="text" data-bind="value: sentence, visible: ! printparagraph (), css: {panel:printparagraph }">
+         <div>
+                     <textarea id="sentencebox" type="text" data-bind="value: sentence, visible: ! printparagraph (), css: {panel:printparagraph }">
             </textarea>
          
-         <button data-bind="click: connect, visible: !printparagraph()">
+         </div>
+         <div>
+
+         <button data-bind="click: connect, visible: !printparagraph()" class="button">
              NEXT!
          </button>
-       
+       </div>
       
     </div>
 
@@ -34,6 +40,7 @@
         </p>
     </div>
 
-    <div>
-        <p data-bind="text: example, visible:!printparagraph()" class="panel"></p>
+    <div class="panel">
+        Example
+        <p data-bind="text: example, visible:!printparagraph()" ></p>
     </div>
